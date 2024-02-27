@@ -1,0 +1,20 @@
+	
+	- https://www.rapidagua.com.br
+	- 
+	
+	Aplicativo web
+		Funcionalidades
+			- Gerenciamentos de clientes
+			- Entregadores
+			- Produtos
+			- Hardware
+			- Monitoramento de pedidos
+			- Processo de entrega
+
+	Aplicativo Mobile
+		Funcionalidades
+			- Carinho de compra
+			- Catalogo de produtos
+			- Acompanhamento da entrega do produtos
+			- Cadastro de clientes
+			- Meio de pagamento
