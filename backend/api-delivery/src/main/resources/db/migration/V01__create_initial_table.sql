@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS tb_order(
     latitude            VARCHAR,
     longitude           VARCHAR,
     moment              TIMESTAMP,
-    status              VARCHAR,
+    status              SMALLINT,
     total               BIGINT
 );
 
