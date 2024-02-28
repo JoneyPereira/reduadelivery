@@ -6,6 +6,7 @@ import lombok.Data;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @Data
 @Entity
@@ -14,7 +15,7 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id_order;
+    private UUID id_order;
 
     private String address;
     private Double latitude;
@@ -24,7 +25,7 @@ public class Order {
 
     @ManyToMany
     @JoinTable(name = "tb_order_product",
-    joinColumns = @JoinColumn(name = "order_id"),
-    inverseJoinColumns = @JoinColumn(name = "product_id"))
+    joinColumns = @JoinColumn(name = "id_order"),
+    inverseJoinColumns = @JoinColumn(name = "id_product"))
     private Set<Product> products = new HashSet<>();
 }

@@ -3,10 +3,12 @@ package com.redua.apidelivery.dto;
 import com.redua.apidelivery.entities.Product;
 import lombok.Data;
 
+import java.util.UUID;
+
 @Data
 public class ProductDTO {
 
-    private String id_product;
+    private UUID id_product;
     private String name;
     private Double price;
     private String description;
