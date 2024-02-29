@@ -1,7 +1,9 @@
 package com.redua.apidelivery.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 import java.util.HashSet;
@@ -28,4 +30,13 @@ public class Order {
     joinColumns = @JoinColumn(name = "id_order"),
     inverseJoinColumns = @JoinColumn(name = "id_product"))
     private Set<Product> products = new HashSet<>();
+
+    public Order(UUID id_order, String address, Double latitude, Double longitude, Instant moment, OrderStatus status) {
+        this.id_order = id_order;
+        this.address = address;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.moment = moment;
+        this.status = status;
+    }
 }
