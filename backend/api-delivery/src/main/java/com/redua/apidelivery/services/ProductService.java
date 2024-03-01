@@ -39,7 +39,7 @@ public class ProductService {
     @Transactional(readOnly = true)
     public ProductDTO findById(UUID uuid){
         Optional<Product> obj = productRepository.findById(uuid);
-        Product product = obj.orElseThrow(() -> new ResourceNotFoundException("Objeto não encontrado, id: " + uuid));
+        Product product = obj.orElseThrow(() -> new ResourceNotFoundException("Objeto não encontrado, uuid: " + uuid));
         return new ProductDTO(product);
     }
 
