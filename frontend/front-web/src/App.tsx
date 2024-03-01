@@ -1,9 +1,12 @@
 import './App.css';
+import Routes from './Routes';
+import Navbar from './Navbar';
 
 function App() {
   return (
     <div>
-      <h1>Olá Mundo!</h1>
+      <Navbar/>
+      <Routes/>
     </div>
   );
 }
