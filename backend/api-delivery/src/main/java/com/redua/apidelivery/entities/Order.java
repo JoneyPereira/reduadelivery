@@ -28,4 +28,13 @@ public class Order {
     joinColumns = @JoinColumn(name = "id_order"),
     inverseJoinColumns = @JoinColumn(name = "id_product"))
     private Set<Product> products = new HashSet<>();
+
+    public Order(UUID id_order, String address, Double latitude, Double longitude, Instant moment, OrderStatus status) {
+        this.id_order = id_order;
+        this.address = address;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.moment = moment;
+        this.status = status;
+    }
 }
