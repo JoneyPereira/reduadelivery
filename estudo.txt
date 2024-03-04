@@ -18,3 +18,7 @@
 			- Acompanhamento da entrega do produtos
 			- Cadastro de clientes
 			- Meio de pagamento
+	
+	api-backend
+	app-web - 1:50:00
+	app-mobile
