@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 
 function Routes() {
     return (
-        <BrowserRouter >
+        <BrowserRouter>
         <Navbar/>
             <Switch>
             <Route path="/orders"><Orders/></Route>

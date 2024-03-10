@@ -2,7 +2,7 @@ function StepsHeader() {
     return (
         <header className='orders-steps-container'>
             <div className='orders-steps-content'>
-            <h1 className='steps-title'>Siga as <br/> atapas.</h1>
+            <h1 className='steps-title'>Siga as <br/> etapas.</h1>
             <ul className='steps-items'>
                 <li>
                     <span className='steps-number'>1</span>
