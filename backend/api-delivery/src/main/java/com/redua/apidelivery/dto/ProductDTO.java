@@ -20,7 +20,6 @@ public class ProductDTO {
 
     public ProductDTO() {
     }
-
     public ProductDTO(UUID id_product, String name, Double price, String description, String imageUri) {
         this.id_product = id_product;
         this.name = name;
@@ -28,7 +27,6 @@ public class ProductDTO {
         this.description = description;
         this.imageUri = imageUri;
     }
-
     public ProductDTO(Product entity) {
         id_product = entity.getId_product();
         name = entity.getName();

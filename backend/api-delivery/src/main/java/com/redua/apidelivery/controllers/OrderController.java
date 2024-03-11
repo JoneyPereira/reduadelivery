@@ -1,9 +1,7 @@
 package com.redua.apidelivery.controllers;
 
 import com.redua.apidelivery.dto.OrderDTO;
-import com.redua.apidelivery.dto.ProductDTO;
 import com.redua.apidelivery.services.OrderService;
-import com.redua.apidelivery.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,14 +34,12 @@ public class OrderController {
                 .buildAndExpand(dto.getId_order()).toUri();
         return ResponseEntity.created(uri).body(dto);
     }
-
     @PutMapping(value = "/{uuid}/delivered")
     public ResponseEntity<OrderDTO> setDelivered(@PathVariable UUID uuid){
 
         OrderDTO dto = orderService.setDelivered(uuid);
         return ResponseEntity.ok().body(dto);
     }
-
     @PutMapping(value = "/{uuid}/paid")
     public ResponseEntity<OrderDTO> setPaid(@PathVariable UUID uuid){
 

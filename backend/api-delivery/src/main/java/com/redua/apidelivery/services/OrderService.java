@@ -32,14 +32,12 @@ public class OrderService {
         List<Order> listOrders = orderRepository.findOrdersWithProducts();
         return listOrders.stream().map(OrderDTO::new).collect(Collectors.toList());
     }
-
     @Transactional(readOnly = true)
     public OrderDTO findById(UUID uuid){
         Optional<Order> obj = orderRepository.findById(uuid);
         Order order = obj.orElseThrow(() -> new ResourceNotFoundException("Objeto não encontrado, uuid: " + uuid));
         return new OrderDTO(order);
     }
-
     @Transactional
     public OrderDTO insert(OrderDTO dto) {
         Order order = new Order(null, dto.getAddress(), dto.getLatitude(), dto.getLongitude(),
@@ -51,7 +49,6 @@ public class OrderService {
         order = orderRepository.save(order);
         return new OrderDTO(order);
     }
-
     @Transactional
     public OrderDTO setDelivered(UUID uuid){
         try {
@@ -76,5 +73,4 @@ public class OrderService {
             throw new ResourceNotFoundException("Objeto não encontrado, uuid: " + uuid);
         }
     }
-
 }

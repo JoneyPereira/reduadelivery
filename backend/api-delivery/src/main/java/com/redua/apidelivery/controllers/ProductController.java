@@ -22,14 +22,12 @@ public class ProductController {
         List<ProductDTO> listProducts = productService.findAll();
         return ResponseEntity.ok().body(listProducts);
     }
-
     @GetMapping(value = "/{uuid}")
     public ResponseEntity<ProductDTO> findById(@PathVariable UUID uuid){
 
         ProductDTO dto = productService.findById(uuid);
         return ResponseEntity.ok().body(dto);
     }
-
     @PostMapping
     public ResponseEntity<ProductDTO> insert(@RequestBody ProductDTO dto){
 
@@ -37,14 +35,12 @@ public class ProductController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId_product()).toUri();
         return ResponseEntity.created(uri).body(dto);
     }
-
     @PutMapping(value = "/{uuid}")
     public ResponseEntity<ProductDTO> update(@PathVariable UUID uuid, @RequestBody ProductDTO dto){
 
         dto = productService.update(uuid, dto);
         return ResponseEntity.ok().body(dto);
     }
-
     @DeleteMapping(value = "/{uuid}")
     public ResponseEntity<Void> update(@PathVariable UUID uuid){
 
