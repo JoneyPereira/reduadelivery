@@ -29,20 +29,17 @@ public class ProductService {
         List<Product> listProcuts = productRepository.findAllByOrderByNameAsc();
         return listProcuts.stream().map(ProductDTO::new).collect(Collectors.toList());
     }
-
     @Transactional(readOnly = true)
     public Page<ProductDTO> findAllPaged(Pageable pageable){
         Page<Product> list = productRepository.findAll(pageable);
         return list.map(ProductDTO::new);
     }
-
     @Transactional(readOnly = true)
     public ProductDTO findById(UUID uuid){
         Optional<Product> obj = productRepository.findById(uuid);
         Product product = obj.orElseThrow(() -> new ResourceNotFoundException("Objeto não encontrado, uuid: " + uuid));
         return new ProductDTO(product);
     }
-
     @Transactional
     public ProductDTO insert(ProductDTO dto){
         Product product = new Product();
@@ -50,7 +47,6 @@ public class ProductService {
         product = productRepository.save(product);
         return new ProductDTO(product);
     }
-
     @Transactional
     public ProductDTO update(UUID uuid, ProductDTO dto){
         try {
@@ -63,7 +59,6 @@ public class ProductService {
             throw new ResourceNotFoundException("Objeto não encontrado, uuid: " + uuid);
         }
     }
-
     public void delete(UUID uuid){
         try {
             productRepository.deleteById(uuid);
@@ -75,7 +70,6 @@ public class ProductService {
             throw new DatabaseException("Violação de integridade!");
         }
     }
-
     private void copyDtoToEntity(ProductDTO dto, Product product){
         product.setName(dto.getName());
         product.setPrice(dto.getPrice());

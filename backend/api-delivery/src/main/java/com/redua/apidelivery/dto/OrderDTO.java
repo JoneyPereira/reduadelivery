@@ -1,9 +1,7 @@
 package com.redua.apidelivery.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.redua.apidelivery.entities.Order;
 import com.redua.apidelivery.entities.OrderStatus;
-import com.redua.apidelivery.entities.Product;
 import lombok.*;
 import lombok.extern.jackson.Jacksonized;
 
@@ -30,7 +28,6 @@ public class OrderDTO {
 
     public OrderDTO() {
     }
-
     public OrderDTO(UUID id_order, String address, Double latitude, Double longitude, Instant moment, OrderStatus status, List<ProductDTO> products) {
         this.id_order = id_order;
         this.address = address;
@@ -40,7 +37,6 @@ public class OrderDTO {
         this.status = status;
         this.products = products;
     }
-
     public OrderDTO(Order entity) {
         id_order = entity.getId_order();
         address = entity.getAddress();
