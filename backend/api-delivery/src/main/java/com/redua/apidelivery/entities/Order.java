@@ -33,6 +33,14 @@ public class Order {
     inverseJoinColumns = @JoinColumn(name = "id_product"))
     private Set<Product> products = new HashSet<>();
 
+    public Double getTotal(){
+        double sum = 0.0;
+        for(Product p : products){
+            sum += p.getPrice();
+        }
+        return sum;
+    }
+
     public Order(UUID id_order, String address, Double latitude, Double longitude, Instant moment, OrderStatus status) {
         this.id_order = id_order;
         this.address = address;
