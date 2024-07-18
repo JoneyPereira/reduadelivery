@@ -22,19 +22,22 @@ public class OrderDTO {
     private Double longitude;
     private Instant moment;
     private OrderStatus status;
+    private Double total;
 
     private List<ProductDTO> products = new ArrayList<>();
 
 
     public OrderDTO() {
     }
-    public OrderDTO(UUID id_order, String address, Double latitude, Double longitude, Instant moment, OrderStatus status, List<ProductDTO> products) {
+    public OrderDTO(UUID id_order, String address, Double latitude, Double longitude,
+                    Instant moment, OrderStatus status, Double total, List<ProductDTO> products) {
         this.id_order = id_order;
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
         this.moment = moment;
         this.status = status;
+        this.total = total;
         this.products = products;
     }
     public OrderDTO(Order entity) {
@@ -44,6 +47,7 @@ public class OrderDTO {
         longitude = entity.getLatitude();
         moment = entity.getMoment();
         status = entity.getStatus();
+        total = entity.getTotal();
         products = entity.getProducts().stream()
                 .map(ProductDTO::new).collect(Collectors.toList());
     }
